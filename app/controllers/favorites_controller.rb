@@ -57,7 +57,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params.fetch("id_to_modify"))
 
     @favorite.deal_id = params.fetch("deal_id")
-    @favorite.user_id = params.fetch("user_id")
+    
 
     if @favorite.valid?
       @favorite.save
