@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for deal_id start -->
-    <input type="text" id="deal_id" name="deal_id" class="form-control" value="<%= @favorite.deal_id %>">
+    <%= select_tag(:deal_id, options_from_collection_for_select(Deal.all, :id, :deal_tagline, @favorite.deal_id), :class => "form-control") %>
     <!-- Input for deal_id end -->
   </div>
   <!-- Label and input for deal_id end -->
