@@ -1,0 +1,37 @@
+<!-- Form comment start -->
+<form action="/create_comment_from_deal" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for comment start -->
+  <div class="form-group">
+    <label for="comment">
+      Comment
+    </label>
+
+    <!-- Input for comment start -->
+    <input type="text" id="comment" name="comment" class="form-control" value="<%= @comment.comment %>">
+    <!-- Input for comment end -->
+  </div>
+  <!-- Label and input for comment end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @comment.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for deal_id start -->
+  <!-- Input for deal_id start -->
+  <input type="hidden" name="deal_id" value="<%= @deal.id %>">
+  <!-- Input for deal_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>

@@ -6,6 +6,8 @@ class DealsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @favorite = Favorite.new
     @deal = Deal.find(params.fetch("id_to_display"))
 
     render("deal_templates/show.html.erb")
@@ -34,6 +36,28 @@ class DealsController < ApplicationController
       @deal.save
 
       redirect_back(:fallback_location => "/deals", :notice => "Deal created successfully.")
+    else
+      render("deal_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bar
+    @deal = Deal.new
+
+    @deal.bar_id = params.fetch("bar_id")
+    @deal.day_of_week = params.fetch("day_of_week")
+    @deal.deal_level = params.fetch("deal_level")
+    @deal.description = params.fetch("description")
+    @deal.start_time = params.fetch("start_time")
+    @deal.end_time = params.fetch("end_time")
+    @deal.deal_tagline = params.fetch("deal_tagline")
+    @deal.rating = params.fetch("rating")
+    @deal.verification_status = params.fetch("verification_status")
+
+    if @deal.valid?
+      @deal.save
+
+      redirect_to("/bars/#{@deal.bar_id}", notice: "Deal created successfully.")
     else
       render("deal_templates/new_form_with_errors.html.erb")
     end

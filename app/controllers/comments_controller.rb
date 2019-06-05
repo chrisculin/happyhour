@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+    @photo = Photo.new
     @comment = Comment.find(params.fetch("id_to_display"))
 
     render("comment_templates/show.html.erb")
@@ -28,6 +29,22 @@ class CommentsController < ApplicationController
       @comment.save
 
       redirect_back(:fallback_location => "/comments", :notice => "Comment created successfully.")
+    else
+      render("comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_deal
+    @comment = Comment.new
+
+    @comment.comment = params.fetch("comment")
+    @comment.user_id = params.fetch("user_id")
+    @comment.deal_id = params.fetch("deal_id")
+
+    if @comment.valid?
+      @comment.save
+
+      redirect_to("/deals/#{@comment.deal_id}", notice: "Comment created successfully.")
     else
       render("comment_templates/new_form_with_errors.html.erb")
     end

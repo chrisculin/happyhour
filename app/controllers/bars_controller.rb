@@ -6,6 +6,7 @@ class BarsController < ApplicationController
   end
 
   def show
+    @deal = Deal.new
     @bar = Bar.find(params.fetch("id_to_display"))
 
     render("bar_templates/show.html.erb")
