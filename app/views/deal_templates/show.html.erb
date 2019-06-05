@@ -34,7 +34,11 @@
       </dt>
       <!-- Display bar_id start -->
       <dd>
-        <%= @deal.bar_id %>
+        <% if @deal.bar.present? %>
+          <a href="/bars/<%= @deal.bar_id %>">
+            <%= @deal.bar.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display bar_id end -->
 

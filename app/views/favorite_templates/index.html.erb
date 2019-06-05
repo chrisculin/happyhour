@@ -58,13 +58,21 @@
 
         <!-- Display favorite.deal_id start -->
         <td>
-          <%= favorite.deal.deal_tagline %>
+          <% if favorite.deal.present? %>
+            <a href="/deals/<%= favorite.deal.id %>">
+              <%= favorite.deal.deal_tagline %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.deal_id end -->
 
         <!-- Display favorite.user_id start -->
         <td>
-          <%= favorite.user.username %>
+          <% if favorite.user.present? %>
+            <a href="/users/<%= favorite.user.id %>">
+              <%= favorite.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.user_id end -->
 

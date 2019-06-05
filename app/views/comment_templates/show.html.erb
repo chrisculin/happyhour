@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @comment.user_id %>
+        <% if @comment.user.present? %>
+          <a href="/users/<%= @comment.user_id %>">
+            <%= @comment.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display deal_id start -->
       <dd>
-        <%= @comment.deal_id %>
+        <% if @comment.deal.present? %>
+          <a href="/deals/<%= @comment.deal_id %>">
+            <%= @comment.deal.deal_tagline %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display deal_id end -->
 

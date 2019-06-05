@@ -68,13 +68,21 @@
 
         <!-- Display comment.user_id start -->
         <td>
-          <%= comment.user.username %>
+          <% if comment.user.present? %>
+            <a href="/users/<%= comment.user.id %>">
+              <%= comment.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.user_id end -->
 
         <!-- Display comment.deal_id start -->
         <td>
-          <%= comment.deal.deal_tagline %>
+          <% if comment.deal.present? %>
+            <a href="/deals/<%= comment.deal.id %>">
+              <%= comment.deal.deal_tagline %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.deal_id end -->
 

@@ -86,7 +86,11 @@
 
         <!-- Display deal.bar_id start -->
         <td>
-          <%= deal.bar.name %>
+          <% if deal.bar.present? %>
+            <a href="/bars/<%= deal.bar.id %>">
+              <%= deal.bar.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display deal.bar_id end -->
 

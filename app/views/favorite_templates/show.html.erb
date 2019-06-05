@@ -38,7 +38,11 @@
       </dt>
       <!-- Display deal_id start -->
       <dd>
-        <%= @favorite.deal_id %>
+        <% if @favorite.deal.present? %>
+          <a href="/deals/<%= @favorite.deal_id %>">
+            <%= @favorite.deal.deal_tagline %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display deal_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @favorite.user_id %>
+        <% if @favorite.user.present? %>
+          <a href="/users/<%= @favorite.user_id %>">
+            <%= @favorite.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
