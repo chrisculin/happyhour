@@ -1,6 +1,7 @@
 class DealsController < ApplicationController
   def index
-    @deals = Deal.page(params[:page]).per(10)
+    @q = Deal.ransack(params[:q])
+    @deals = @q.result(:distinct => true).includes(:bar, :likes, :comments).page(params[:page]).per(10)
 
     render("deal_templates/index.html.erb")
   end
