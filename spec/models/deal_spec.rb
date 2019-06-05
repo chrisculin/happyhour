@@ -4,6 +4,8 @@ RSpec.describe Deal, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:bar) }
+
     end
 
     describe "InDirect Associations" do
