@@ -14,6 +14,8 @@ RSpec.describe Comment, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:bar) }
+
     end
 
     describe "Validations" do

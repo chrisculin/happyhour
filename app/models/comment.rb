@@ -12,6 +12,10 @@ class Comment < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :bar,
+             :through => :deal,
+             :source => :bar
+
   # Validations
 
 end
