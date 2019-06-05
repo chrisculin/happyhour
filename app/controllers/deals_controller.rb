@@ -67,6 +67,14 @@ class DealsController < ApplicationController
     end
   end
 
+  def destroy_row_from_bar
+    @deal = Deal.find(params.fetch("id_to_remove"))
+
+    @deal.destroy
+
+    redirect_to("/bars/#{@deal.bar_id}", notice: "Deal deleted successfully.")
+  end
+
   def destroy_row
     @deal = Deal.find(params.fetch("id_to_remove"))
 
