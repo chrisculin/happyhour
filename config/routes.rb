@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Deal resource:
+
+  # CREATE
+  get("/deals/new", { :controller => "deals", :action => "new_form" })
+  post("/create_deal", { :controller => "deals", :action => "create_row" })
+
+  # READ
+  get("/deals", { :controller => "deals", :action => "index" })
+  get("/deals/:id_to_display", { :controller => "deals", :action => "show" })
+
+  # UPDATE
+  get("/deals/:prefill_with_id/edit", { :controller => "deals", :action => "edit_form" })
+  post("/update_deal/:id_to_modify", { :controller => "deals", :action => "update_row" })
+
+  # DELETE
+  get("/delete_deal/:id_to_remove", { :controller => "deals", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
