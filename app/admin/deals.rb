@@ -1,4 +1,6 @@
 ActiveAdmin.register Deal do
+
+ permit_params :bar_id, :day_of_week, :deal_level, :description, :start_time, :end_time, :deal_tagline, :rating, :verification_status
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
