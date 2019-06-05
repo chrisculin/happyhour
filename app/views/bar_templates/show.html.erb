@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Bar #<%= @bar.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/bars" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link bar start -->
+      <div class="col">
+        <a href="/bars/<%= @bar.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit bar
+        </a>
+      </div>
+      <!-- Edit link bar end -->
+
+      <!-- Delete link bar start -->
+      <div class="col">
+        <a href="/delete_bar/<%= @bar.id %>" class="btn btn-block btn-outline-secondary">
+          Delete bar
+        </a>
+      </div>
+      <!-- Delete link bar end -->
+    </div>
+
+    <dl>
+      <dt>
+        Address
+      </dt>
+      <!-- Display address start -->
+      <dd>
+        <%= @bar.address %>
+      </dd>
+      <!-- Display address end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @bar.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Yelp link
+      </dt>
+      <!-- Display yelp_link start -->
+      <dd>
+        <%= @bar.yelp_link %>
+      </dd>
+      <!-- Display yelp_link end -->
+
+      <dt>
+        Phone number
+      </dt>
+      <!-- Display phone_number start -->
+      <dd>
+        <%= @bar.phone_number %>
+      </dd>
+      <!-- Display phone_number end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@bar.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@bar.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
