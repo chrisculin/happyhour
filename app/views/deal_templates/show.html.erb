@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link deal start -->
       <div class="col">
         <a href="/deals/<%= @deal.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit deal
         </a>
       </div>
-      <!-- Edit link deal end -->
 
-      <!-- Delete link deal start -->
       <div class="col">
         <a href="/delete_deal/<%= @deal.id %>" class="btn btn-block btn-outline-secondary">
           Delete deal
         </a>
       </div>
-      <!-- Delete link deal end -->
     </div>
 
     <dl>
       <dt>
         Bar
       </dt>
-      <!-- Display bar_id start -->
       <dd>
         <% if @deal.bar.present? %>
           <a href="/bars/<%= @deal.bar_id %>">
@@ -40,102 +35,80 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display bar_id end -->
 
       <dt>
         Day of week
       </dt>
-      <!-- Display day_of_week start -->
       <dd>
         <%= @deal.day_of_week %>
       </dd>
-      <!-- Display day_of_week end -->
 
       <dt>
         Deal level
       </dt>
-      <!-- Display deal_level start -->
       <dd>
         <%= @deal.deal_level %>
       </dd>
-      <!-- Display deal_level end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @deal.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Start time
       </dt>
-      <!-- Display start_time start -->
       <dd>
         <%= @deal.start_time %>
       </dd>
-      <!-- Display start_time end -->
 
       <dt>
         End time
       </dt>
-      <!-- Display end_time start -->
       <dd>
         <%= @deal.end_time %>
       </dd>
-      <!-- Display end_time end -->
 
       <dt>
         Deal tagline
       </dt>
-      <!-- Display deal_tagline start -->
       <dd>
         <%= @deal.deal_tagline %>
       </dd>
-      <!-- Display deal_tagline end -->
 
       <dt>
         Rating
       </dt>
-      <!-- Display rating start -->
       <dd>
         <%= @deal.rating %>
       </dd>
-      <!-- Display rating end -->
 
       <dt>
         Verification status
       </dt>
-      <!-- Display verification_status start -->
       <dd>
         <%= @deal.verification_status %>
       </dd>
-      <!-- Display verification_status end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@deal.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@deal.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "deal_templates/deal_likes" %>
@@ -147,4 +120,3 @@
     <%= render partial: "deal_templates/deal_comments" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

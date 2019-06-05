@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link comment start -->
       <div class="col">
         <% if current_user == @comment.user %>
           <a href="/comments/<%= @comment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link comment end -->
 
-      <!-- Delete link comment start -->
       <div class="col">
         <% if current_user == @comment.user %>
           <a href="/delete_comment/<%= @comment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link comment end -->
     </div>
 
     <dl>
       <dt>
         Comment
       </dt>
-      <!-- Display comment start -->
       <dd>
         <%= @comment.comment %>
       </dd>
-      <!-- Display comment end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @comment.user.present? %>
           <a href="/users/<%= @comment.user_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Deal
       </dt>
-      <!-- Display deal_id start -->
       <dd>
         <% if @comment.deal.present? %>
           <a href="/deals/<%= @comment.deal_id %>">
@@ -66,33 +57,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display deal_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "comment_templates/comment_photos" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
