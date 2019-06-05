@@ -6,6 +6,10 @@ class Bar < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :likes,
+             :through => :deals,
+             :source => :likes
+
   has_many   :comments,
              :through => :deals,
              :source => :comments
