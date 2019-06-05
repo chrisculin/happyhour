@@ -1,6 +1,9 @@
 class Comment < ApplicationRecord
   # Direct associations
 
+  has_many   :photos,
+             :dependent => :destroy
+
   belongs_to :deal,
              :counter_cache => true
 
