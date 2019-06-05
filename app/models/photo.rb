@@ -6,6 +6,10 @@ class Photo < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :bar,
+             :through => :comment,
+             :source => :bar
+
   # Validations
 
 end

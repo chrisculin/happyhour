@@ -6,6 +6,10 @@ class Bar < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :photos,
+             :through => :comments,
+             :source => :photos
+
   # Validations
 
 end

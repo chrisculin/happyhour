@@ -10,6 +10,8 @@ RSpec.describe Bar, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:photos) }
+
     end
 
     describe "Validations" do
